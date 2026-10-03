@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "MailGuard Forensics",
+  "version": "1.0.0",
+  "description": "Explains suspicious-email signals and lets users make the final decision.",
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": ["https://mail.google.com/*", "https://outlook.office.com/*", "https://outlook.live.com/*"],
+  "content_scripts": [{
+    "matches": ["https://mail.google.com/*", "https://outlook.office.com/*", "https://outlook.live.com/*"],
+    "js": ["content.js"],
+    "css": ["mailguard.css"],
+    "run_at": "document_idle"
+  }],
+  "action": { "default_title": "MailGuard Forensics", "default_popup": "popup.html" }
+}
